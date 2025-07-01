@@ -1,3 +1,6 @@
+"use client";
+import { DotLottiePlayer } from "@dotlottie/react-player";
+
 const tabs = [
   {
     icon: "/assets/lottie/vroom.lottie",
@@ -28,7 +31,22 @@ const tabs = [
 import React from "react";
 
 const Features = () => {
-  return <div>Features</div>;
+  return (
+    <section>
+      <div className="container">
+        <h2>Elevate SEO efforts</h2>
+        <p>
+          From small startups to large enterprises, our AI driven tool has
+          revolutionized the way businesses approach SEO
+        </p>
+        {tabs.map((tabs) => (
+          <div key={tabs.title}>
+            <DotLottiePlayer src={tabs.icon} className="size-5" autoplay />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Features;

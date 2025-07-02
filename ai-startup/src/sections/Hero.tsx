@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="absolute h-2 w-2 bg-white rounded-full top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute h-2 w-2 bg-white rounded-full top-1/2 left-full -translate-x-1/2 -translate-y-1/2"></div>
       </div>
-      <div className="container relative z-10 text-center mt-16">
+      <div className="container relative z-10 text-center mt-6">
         <h1 className="text-8xl md:text-[168px] md:leading-none font-semibold bg-white text-transparent bg-clip-text tracking-tighter bg-[radial-gradient(100%_100%_at_top_left,white,white,rgba(74,32,138,0.5))]">
           Prox
         </h1>

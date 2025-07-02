@@ -1,5 +1,7 @@
 "use client";
 import { DotLottiePlayer } from "@dotlottie/react-player";
+// import Image from "next/image";
+import productImage from "@/assets/product-image.png";
 
 const tabs = [
   {
@@ -32,18 +34,45 @@ import React from "react";
 
 const Features = () => {
   return (
-    <section>
+    <section className="py-20">
       <div className="container">
-        <h2>Elevate SEO efforts</h2>
-        <p>
-          From small startups to large enterprises, our AI driven tool has
-          revolutionized the way businesses approach SEO
+        <h2 className="text-5xl md:text-6xl font-medium text-center tracking-tighter">
+          Elevate SEO efforts
+        </h2>
+        <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto tracking-tight text-center mt-5">
+          From startups to enterprises, our AI tool is redefining SEO
         </p>
-        {tabs.map((tabs) => (
-          <div key={tabs.title}>
-            <DotLottiePlayer src={tabs.icon} className="size-5" autoplay />
+        <div className="mt-10 flex flex-col lg:flex-row gap-4">
+          {tabs.map((tabs) => (
+            <div
+              key={tabs.title}
+              className="border xl:flex-1 border-white/15 flex p-2.5 items-center rounded-xl gap-2.5"
+            >
+              <div className="h-12 w-12 border border-white/15 rounded-lg inline-flex items-center justify-center">
+                <DotLottiePlayer src={tabs.icon} className="size-5" autoplay />
+              </div>
+              <div className="font-medium">{tabs.title}</div>
+              {tabs.isNew && (
+                <div
+                  className="text-xs rounded-full px-2 py-0.5
+              bg-[#8c44ff] text-black font-semibold"
+                >
+                  new
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="border border-white/20 p-2.5 rounded-xl mt-3">
+          <div
+            className=" aspect-video bg-cover border border-white/20 rounded-lg"
+            style={{
+              backgroundImage: `url(${productImage.src})`,
+            }}
+          >
+            {/* <Image src={productImage} alt="Product Image" /> */}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

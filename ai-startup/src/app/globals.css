@@ -3,7 +3,8 @@
 @theme {
   --breakpoint-sm: 375px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 1200px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
 }
 
 @utility container {

@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 const Hero = () => {
   return (
     <section
-      className="min-h-screen mt-32 md:mt-24 lg:mt-16 flex items-center justify-center relative overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] -z-10"
+      className="min-h-screen mt-12 lg:mt-16 flex items-center justify-center relative overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] -z-10"
       style={{ backgroundImage: "url('/stars.png')" }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,.5)_15%,rgb(14,0,36,.5)_78%,transparent)] z-[-20]"></div>

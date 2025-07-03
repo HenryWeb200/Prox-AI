@@ -7,6 +7,13 @@ const nextConfig: NextConfig = {
   images: {
     domains: [], // Add domains here for <Image src="..."> external sources
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|svg)$/i,
+      type: "asset/resource",
+    });
+    return config;
+  },
 };
 
 export default nextConfig;

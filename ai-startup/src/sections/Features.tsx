@@ -1,9 +1,20 @@
 "use client";
+import React, { useEffect } from "react";
 import { DotLottiePlayer } from "@dotlottie/react-player";
-// import Image from "next/image";
-import productImage from "@/assets/product-image.png";
 
-const tabs = [
+// Simplified DotLottiePlayer component
+
+// Define the Tab type to improve type safety
+interface Tab {
+  icon: string;
+  title: string;
+  isNew: boolean;
+  backgroundPositionX: number;
+  backgroundPositionY: number;
+  backgroundSizeX: number;
+}
+
+const tabs: Tab[] = [
   {
     icon: "/assets/lottie/vroom.lottie",
     title: "User-friendly dashboard",
@@ -30,9 +41,11 @@ const tabs = [
   },
 ];
 
-import React from "react";
-
 const Features = () => {
+  useEffect(() => {
+    console.log("Features component rendered"); // Debug log
+  }, []);
+
   return (
     <section className="py-20">
       <div className="container">
@@ -43,20 +56,17 @@ const Features = () => {
           From startups to enterprises, our AI tool is redefining SEO
         </p>
         <div className="mt-10 flex flex-col lg:flex-row gap-4">
-          {tabs.map((tabs) => (
+          {tabs.map((tab) => (
             <div
-              key={tabs.title}
+              key={tab.title}
               className="border xl:flex-1 border-white/15 flex p-2.5 items-center rounded-xl gap-2.5"
             >
               <div className="h-12 w-12 border border-white/15 rounded-lg inline-flex items-center justify-center">
-                <DotLottiePlayer src={tabs.icon} className="size-5" autoplay />
+                <DotLottiePlayer src={tab.icon} className="h-5 w-5" />
               </div>
-              <div className="font-medium">{tabs.title}</div>
-              {tabs.isNew && (
-                <div
-                  className="text-xs rounded-full px-2 py-0.5
-              bg-[#8c44ff] text-black font-semibold"
-                >
+              <div className="font-medium">{tab.title}</div>
+              {tab.isNew && (
+                <div className="text-xs rounded-full px-2 py-0.5 bg-[#8c44ff] text-black font-semibold">
                   new
                 </div>
               )}
@@ -65,14 +75,14 @@ const Features = () => {
         </div>
         <div className="border border-white/20 p-2.5 rounded-xl mt-3">
           <div
-            className=" aspect-video bg-cover border border-white/20 rounded-lg"
+            className="aspect-video bg-cover border border-white/20 rounded-lg"
             style={{
-              backgroundImage: `url(${productImage.src})`,
+              backgroundImage: 'url("/product-image.png")',
             }}
-          >
-            {/* <Image src={productImage} alt="Product Image" /> */}
-          </div>
+          ></div>
         </div>
+        {/* Placeholder for j component usage if intended */}
+        {/* <J /> */}
       </div>
     </section>
   );

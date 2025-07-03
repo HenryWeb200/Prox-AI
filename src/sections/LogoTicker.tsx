@@ -10,6 +10,7 @@ import celestialLogo from "@/assets/logo-celestial.png";
 import quantumLogo from "@/assets/logo-quantum.png";
 import pulseLogo from "@/assets/logo-pulse.png";
 import echoLogo from "@/assets/logo-echo.png";
+import { motion } from "framer-motion";
 
 import { useEffect, useState } from "react";
 
@@ -41,51 +42,43 @@ const LogoTicker = () => {
           </div>
 
           {/* Logo Ticker */}
-          <div className="flex-2 overflow-hidden w-full mt-6 md:mt-0 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-            <div className="flex flex-none gap-8 justify-center md:justify-start">
-              <Image
-                src={acmeLogo}
-                width={90}
-                height={24}
-                alt="Acme Logo"
-                className="h-6 w-auto"
-              />
-              <Image
-                src={pulseLogo}
-                width={90}
-                height={24}
-                alt="Pulse Logo"
-                className="h-6 w-auto"
-              />
-              <Image
-                src={celestialLogo}
-                width={90}
-                height={24}
-                alt="Celestial Logo"
-                className="h-6 w-auto"
-              />
-              <Image
-                src={apexLogo}
-                width={90}
-                height={24}
-                alt="Apex Logo"
-                className="h-6 w-auto"
-              />
-              <Image
-                src={quantumLogo}
-                width={90}
-                height={24}
-                alt="Quantum Logo"
-                className="h-6 w-auto"
-              />
-              <Image
-                src={echoLogo}
-                width={90}
-                height={24}
-                alt="Echo Logo"
-                className="h-6 w-auto"
-              />
-            </div>
+          <div className="flex-2 flex overflow-hidden  w-full mt-6 md:mt-0 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+            <motion.div
+              initial={{ translateX: "-50%" }}
+              animate={{
+                translateX: 0,
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 30,
+                ease: "linear",
+              }}
+              className="flex flex-none pr-14 gap-8 justify-center md:justify-start"
+            >
+              {[
+                acmeLogo,
+                apexLogo,
+                pulseLogo,
+                quantumLogo,
+                echoLogo,
+                celestialLogo,
+                acmeLogo,
+                apexLogo,
+                pulseLogo,
+                quantumLogo,
+                echoLogo,
+                celestialLogo,
+              ].map((logo) => (
+                <Image
+                  width={90}
+                  height={60}
+                  key={logo.src}
+                  src={logo.src}
+                  alt="logo"
+                  className="h-6 w-auto"
+                />
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>

@@ -55,13 +55,55 @@ const LogoTicker = () => {
               }}
               className="flex flex-none pr-14 gap-8 justify-center md:justify-start"
             >
+              <Image
+                width={90}
+                height={60}
+                key={acmeLogo.src}
+                src={acmeLogo.src}
+                alt="logo"
+                className="h-6 w-auto"
+              />
+              <Image
+                width={90}
+                height={60}
+                key={apexLogo.src}
+                src={apexLogo.src}
+                alt="logo"
+                className="h-6 w-auto"
+              />
+              <Image
+                width={90}
+                height={60}
+                key={pulseLogo.src}
+                src={pulseLogo.src}
+                alt="logo"
+                className="h-6 w-auto"
+              />
+              <Image
+                width={90}
+                height={60}
+                key={quantumLogo.src}
+                src={quantumLogo.src}
+                alt="logo"
+                className="h-6 w-auto"
+              />
+              <Image
+                width={90}
+                height={60}
+                key={echoLogo.src}
+                src={echoLogo.src}
+                alt="logo"
+                className="h-6 w-auto"
+              />
+              <Image
+                width={90}
+                height={60}
+                key={celestialLogo.src}
+                src={celestialLogo.src}
+                alt="logo"
+                className="h-6 w-auto"
+              />
               {[
-                acmeLogo,
-                apexLogo,
-                pulseLogo,
-                quantumLogo,
-                echoLogo,
-                celestialLogo,
                 acmeLogo,
                 apexLogo,
                 pulseLogo,

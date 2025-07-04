@@ -1,8 +1,10 @@
+"use client";
 import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
 import avatar4 from "@/assets/avatar-4.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -43,8 +45,19 @@ const Testimonials = () => {
         <p className="text-white/70 md:text-xl max-w-sm md:max-w-md mx-auto text-center text-lg mt-5 tracking-tight">
           Our revolutionary AI SEO tools have transformed our clients strategies
         </p>
-        <div className="overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-          <div className="flex gap-5">
+        <div className="flex overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+          <motion.div
+            initial={{ translateX: "-50%" }}
+            animate={{
+              translateX: 0,
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 40,
+              ease: "linear",
+            }}
+            className="flex flex-none gap-5 pr-5"
+          >
             {testimonials.map((testimonials) => (
               <div
                 className="border flex-none max-w-xs p-6 md:p-10 md:max-w-md border-white/15 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)]"
@@ -70,7 +83,32 @@ const Testimonials = () => {
                 </div>
               </div>
             ))}
-          </div>
+            {testimonials.map((testimonials) => (
+              <div
+                className="border flex-none max-w-xs p-6 md:p-10 md:max-w-md border-white/15 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)]"
+                key={testimonials.name}
+              >
+                <div className="text-lg md:text-2xl tracking-tight">
+                  {testimonials.text}
+                </div>
+                <div className="flex gap-3 items-center mt-5">
+                  <div className="relative before:content-[''] before:absolute before:inset-0 before:z-10 before:rounded-lg before:border before:border-white/30 after:content-[''] after:absolute after:inset-0 after:bg-[rgb(140,69,244)] after:mix-blend-soft-light">
+                    <Image
+                      src={testimonials.avatarImg}
+                      alt={`Avatar for ${testimonials.name}`}
+                      className="size-11 rounded-lg grayscale"
+                    />
+                  </div>
+                  <div className="">
+                    <div>{testimonials.name}</div>
+                    <div className="text-white/50 text-sm">
+                      {testimonials.title}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

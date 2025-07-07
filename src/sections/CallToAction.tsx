@@ -89,7 +89,7 @@ const CallToAction = () => {
             <p className="text-center max-w-sm mx-auto md:text-xl text-lg px-4 text-white/70 mt-5 tracking-tight">
               Achieve clear, impactful results without the complexity
             </p>
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-8">-
               <Button>Join waitlist</Button>
             </div>
           </div>

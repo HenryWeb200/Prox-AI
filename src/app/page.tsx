@@ -10,7 +10,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <>
       <Header />
       <Hero />
       <LogoTicker />
@@ -18,7 +18,7 @@ const page = () => {
       <Testimonials />
       <CallToAction />
       <Footer />
-    </div>
+    </>
   );
 };
 
